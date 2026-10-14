@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAREPULSE - My Profile</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <header>
+        <h2>💚 CAREPULSE</h2>
+        <a href="/">Home / హోమ్</a>
+        <a href="/logout">Logout / లాగ్ అవుట్</a>
+    </header>
+
+    <section>
+        <h1>My Profile / నా ప్రొఫైల్</h1>
+
+        <p>Welcome to CAREPULSE!</p>
+        <p>మీరు విజయవంతంగా లాగిన్ అయ్యారు.</p>
+
+        <p>Mobile Number / మొబైల్ నంబర్:</p>
+        <h3 th:text="${phone}">Mobile Number</h3>
+
+        <a class="btn" href="/">Go to Home / హోమ్‌కు వెళ్లండి</a>
+    </section>
+
+</body>
+</html>

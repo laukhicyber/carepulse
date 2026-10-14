@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAREPULSE - Book Appointment</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header>
+    <h2>💚 CAREPULSE</h2>
+    <a href="/">Home / హోమ్</a>
+    <a href="/profile">My Profile</a>
+    <a href="/logout">Logout</a>
+</header>
+
+<section>
+    <h1>Book Appointment / అపాయింట్‌మెంట్ బుక్ చేయండి</h1>
+    <p>Enter your details to request a doctor appointment.</p>
+
+    <p th:if="${message}" th:text="${message}"></p>
+
+    <form action="/appointments/book" method="post">
+
+        <label>Patient Name / రోగి పేరు</label><br>
+        <input type="text" name="patientName"
+               placeholder="Enter your full name"
+               required maxlength="100">
+        <br><br>
+
+        <label>Mobile Number / మొబైల్ నంబర్</label><br>
+        <input type="tel" name="phone"
+               placeholder="10-digit mobile number"
+               pattern="[6-9][0-9]{9}"
+               maxlength="10"
+               th:value="${phone}" required>
+        <br><br>
+
+        <label>Select Doctor / డాక్టర్‌ను ఎంచుకోండి</label><br>
+        <select name="doctor" required>
+            <option value="">-- Select Doctor --</option>
+            <option value="General Physician">General Physician</option>
+            <option value="Cardiologist">Cardiologist</option>
+            <option value="Orthopedic">Orthopedic</option>
+        </select>
+        <br><br>
+
+        <label>Appointment Date / తేదీ</label><br>
+        <input type="date" name="date"
+               th:attr="min=${#dates.format(#dates.createNow(), 'yyyy-MM-dd')}"
+               required>
+        <br><br>
+
+        <label>Appointment Time / సమయం</label><br>
+        <select name="time" required>
+            <option value="">-- Select Time --</option>
+            <option value="09:00 AM">09:00 AM</option>
+            <option value="10:00 AM">10:00 AM</option>
+            <option value="11:00 AM">11:00 AM</option>
+            <option value="02:00 PM">02:00 PM</option>
+            <option value="03:00 PM">03:00 PM</option>
+            <option value="04:00 PM">04:00 PM</option>
+        </select>
+        <br><br>
+
+        <button type="submit">Book Appointment / బుక్ చేయండి</button>
+
+    </form>
+</section>
+
+</body>
+</html>

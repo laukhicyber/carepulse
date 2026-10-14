@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAREPULSE</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <header>
+        <h2>💚 CAREPULSE</h2>
+
+        <a href="/">Home / హోమ్</a>
+
+        <span th:if="${!loggedIn}">
+            <a href="/login">Login / లాగిన్</a>
+            <a href="/register">Register / రిజిస్టర్</a>
+        </span>
+
+        <span th:if="${loggedIn}">
+            <a href="/profile">My Profile / నా ప్రొఫైల్</a>
+            <a href="/logout">Logout / లాగ్ అవుట్</a>
+        </span>
+    </header>
+
+    <section>
+        <h1>Your Health, Our Priority</h1>
+        <h2>మీ ఆరోగ్యమే మా ప్రాధాన్యత</h2>
+
+        <p>Book doctor appointments easily with CAREPULSE.</p>
+        <p>CAREPULSE ద్వారా డాక్టర్ అపాయింట్‌మెంట్లు సులభంగా బుక్ చేసుకోండి.</p>
+
+        <a class="btn" href="/doctors">
+            🩺 Find a Doctor / డాక్టర్‌ను వెతకండి
+        </a>
+    </section>
+
+    <h2 class="title">Our Services / మా సేవలు</h2>
+
+    <div class="services">
+        <div>
+            <span style="font-size:45px;">🩺</span>
+            <h3>Find Doctors</h3>
+            <p>డాక్టర్లను వెతకండి</p>
+        </div>
+
+        <div>
+            <span style="font-size:45px;">📅</span>
+            <h3>Book Appointments</h3>
+            <p>అపాయింట్‌మెంట్లు బుక్ చేయండి</p>
+        </div>
+
+        <div>
+            <span style="font-size:45px;">📋</span>
+            <h3>Health Records</h3>
+            <p>ఆరోగ్య వివరాలు</p>
+        </div>
+
+        <div>
+            <span style="font-size:45px;">🚑</span>
+            <h3>Emergency Help</h3>
+            <p>అత్యవసర సహాయం</p>
+        </div>
+    </div>
+
+    <footer style="text-align:center; padding:20px;">
+        <p>💚 CAREPULSE — Your Health, Our Priority</p>
+        <p>మీ ఆరోగ్యం మా బాధ్యత</p>
+    </footer>
+
+</body>
+</html>

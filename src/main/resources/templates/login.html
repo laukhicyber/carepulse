@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAREPULSE - Easy Login</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <header>
+        <h2>💚 CAREPULSE</h2>
+        <a href="/">Home</a>
+    </header>
+
+    <section>
+        <h1>Welcome!</h1>
+        <h2>స్వాగతం</h2>
+
+        <p>Login with your mobile number</p>
+        <p>మీ మొబైల్ నంబర్‌తో లాగిన్ అవ్వండి</p>
+
+        <form action="/login/send-otp" method="post">
+            <label for="phone">
+                Mobile Number / మొబైల్ నంబర్
+            </label>
+
+            <br><br>
+
+            <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Enter 10-digit number"
+                inputmode="numeric"
+                pattern="[6-9][0-9]{9}"
+                maxlength="10"
+                autocomplete="tel"
+                required
+                style="font-size: 22px; padding: 15px; width: 80%; max-width: 350px;"
+            >
+
+            <br><br>
+
+            <button class="btn" type="submit"
+                    style="font-size: 20px; padding: 16px 28px;">
+                Send OTP / OTP పంపండి
+            </button>
+        </form>
+
+</div>
+
+        <br>
+        <a href="/">← Home / హోమ్</a>
+    </section>
+
+</body>
+</html>

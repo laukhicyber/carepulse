@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAREPULSE - Booking Confirmation</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header>
+    <h2>💚 CAREPULSE</h2>
+    <a href="/">Home / హోమ్</a>
+    <a href="/profile">My Profile</a>
+    <a href="/logout">Logout</a>
+</header>
+
+<section>
+    <h1>✅ Appointment Request Submitted!</h1>
+    <h2>అపాయింట్‌మెంట్ అభ్యర్థన పూర్తయింది!</h2>
+
+    <p><strong>Patient Name:</strong>
+        <span th:text="${patientName}"></span></p>
+
+    <p><strong>Mobile Number:</strong>
+        <span th:text="${phone}"></span></p>
+
+    <p><strong>Doctor:</strong>
+        <span th:text="${doctor}"></span></p>
+
+    <p><strong>Date:</strong>
+        <span th:text="${date}"></span></p>
+
+    <p><strong>Time:</strong>
+        <span th:text="${time}"></span></p>
+
+    <p>This is a demo booking confirmation, not a confirmed real appointment.</p>
+
+    <a class="btn" href="/">Back to Home / హోమ్‌కు వెళ్లండి</a>
+</section>
+
+</body>
+</html>

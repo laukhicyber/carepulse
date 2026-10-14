@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAREPULSE - Verify OTP</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <section>
+        <h1>Enter OTP / OTP నమోదు చేయండి</h1>
+
+        <p>Enter the OTP to continue.</p>
+        <p>కొనసాగడానికి OTP నమోదు చేయండి.</p>
+
+        <p>
+            Demo OTP:
+            <strong th:text="${demoOtp}">123456</strong>
+        </p>
+
+        <p th:if="${message}" th:text="${message}"></p>
+
+        <form action="/login/verify-otp" method="post">
+            <input type="hidden" name="phone" th:value="${phone}">
+
+            <input type="text"
+                   name="otp"
+                   placeholder="Enter 6-digit OTP"
+                   pattern="[0-9]{6}"
+                   maxlength="6"
+                   required>
+
+            <br><br>
+
+            <button type="submit">Verify OTP / OTP నిర్ధారించండి</button>
+        </form>
+    </section>
+
+</body>
+</html>

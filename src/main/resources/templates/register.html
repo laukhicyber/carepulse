@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAREPULSE - Register</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <header>
+        <h2>💚 CAREPULSE</h2>
+        <a href="/">Home / హోమ్</a>
+        <a href="/login">Login / లాగిన్</a>
+    </header>
+
+    <section>
+        <h1>Register / రిజిస్టర్</h1>
+        <p>Create your CAREPULSE account.</p>
+        <p>మీ CAREPULSE ఖాతాను సృష్టించండి.</p>
+
+        <form action="/register" method="post">
+
+            <label>Full Name / పూర్తి పేరు</label><br>
+            <input type="text" name="name"
+                   placeholder="Enter your full name"
+                   maxlength="100" required>
+            <br><br>
+
+            <label>Mobile Number / మొబైల్ నంబర్</label><br>
+            <input type="tel" name="phone"
+                   placeholder="10-digit mobile number"
+                   pattern="[6-9][0-9]{9}"
+                   maxlength="10" required>
+            <br><br>
+
+            <button type="submit">Register / రిజిస్టర్</button>
+
+        </form>
+
+        <p th:if="${message}" th:text="${message}"></p>
+
+        <p>Already registered? <a href="/login">Login here</a></p>
+    </section>
+
+</body>
+</html>
